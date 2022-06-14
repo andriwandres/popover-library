@@ -1,0 +1,22 @@
+:host {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+$trigger-color: #3c059c;
+
+.button {
+  border: none;
+  border-radius: 10px;
+  padding: 20px;
+  font-size: 18px;
+  color: #efefef;
+  background-color: #3c059c;
+  cursor: pointer;
+
+  &:hover {
+    background-color: lighten($trigger-color, 10%);
+  }
+}

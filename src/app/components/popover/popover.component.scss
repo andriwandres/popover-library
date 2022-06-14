@@ -1,0 +1,63 @@
+$anchor-length: 20px;
+$translationX: 0%;
+$translationY: 0%;
+
+:host {
+  padding: 20px;
+  border: 1px solid grey;
+  border-radius: 5px;
+  position: absolute;
+  background-color: white;
+
+  &.position {
+    &--bottom {
+
+    }
+  }
+
+  &.anchor {
+    $anchor-overlap: -($anchor-length / 2 + 1);
+
+    &--top, &--right, &--bottom, &--left {
+      &::after {
+        content: '';
+        width: $anchor-length;
+        height: $anchor-length;
+        position: absolute;
+        border: 1px solid grey;
+        border-bottom-style: none;
+        border-right-style: none;
+        background-color: white;
+      }
+    }
+
+    &--top::after, &--bottom::after {
+      right: 50%;
+      transform: translateX(50%);
+    }
+
+    &--right::after, &--left::after {
+      bottom: 50%;
+    }
+
+    &--top::after {
+      top: $anchor-overlap;
+      transform: translateX(50%) rotate(45deg);
+    }
+
+    &--right::after {
+      right: $anchor-overlap;
+      transform: translateY(50%) rotate(135deg);
+    }
+
+    &--bottom::after {
+      bottom: $anchor-overlap;
+      transform: translateX(50%) rotate(225deg);
+    }
+
+    &--left::after {
+      left: $anchor-overlap;
+      transform: translateY(50%) rotate(315deg);
+    }
+  }
+}
