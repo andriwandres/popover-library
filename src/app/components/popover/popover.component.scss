@@ -1,6 +1,4 @@
 $anchor-length: 20px;
-$translationX: 0%;
-$translationY: 0%;
 
 :host {
   padding: 20px;
@@ -10,8 +8,30 @@ $translationY: 0%;
   background-color: white;
 
   &.position {
-    &--bottom {
+    &--top, &--bottom {
+      left: 50%;
+      transform: translateX(-50%);
+    }
 
+    &--right, &--left {
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    &--bottom {
+      top: calc(100% + $anchor-length);
+    }
+
+    &--top {
+      bottom: calc(100% + $anchor-length);
+    }
+
+    &--right {
+      left: calc(100% + $anchor-length);
+    }
+
+    &--left {
+      right: calc(100% + $anchor-length);
     }
   }
 

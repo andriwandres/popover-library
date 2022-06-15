@@ -3,14 +3,13 @@
   <button
     class="button"
     [appPopoverTrigger]="popoverTemplate"
-    [appPopoverDirection]="'bottom'"
+    [appPopoverDirection]="'top'"
+    [appPopoverEvents]="['tap', 'hover']"
   >
     <span>Popup Trigger</span>
   </button>
 </app-popover-container>
 
 <ng-template #popoverTemplate>
-  <h1>Popover</h1>
-  <p>This is my custom popover content</p>
-  <button class="button">Submit</button>
+  whatever
 </ng-template>
